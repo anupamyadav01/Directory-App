@@ -47,23 +47,6 @@ const AddNewPerson = () => {
     };
     calculateAge();
   });
-
-  // const data = [
-  //   // {
-  //   //   name: "Amit Sharma",
-  //   //   dob: "01-02-1990",
-  //   //   aadhar: "1234 5678 9012",
-  //   //   mobile: "9876543210",
-  //   //   age: 34,
-  //   // },
-  //   // {
-  //   //   name: "Priya Singh",
-  //   //   dob: "05-06-1985",
-  //   //   aadhar: "2345 6789 0123",
-  //   //   mobile: "8765432109",
-  //   //   age: 39,
-  //   // },
-  // ];
   return (
     <div className="border border-black max-w-[90%] mx-auto flex flex-col mt-6">
       <div className="border-r border-black border-b  text-center max-w-60 font-bold py-3">
