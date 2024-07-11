@@ -18,8 +18,8 @@ A directory app in React is a type of application that allows users to browse, s
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/directory-app-react.git
-    cd directory-app-react
+    git clone https://github.com/anupamyadav01/Directory-App/tree/main/Directory-app
+    cd Directory-app
     ```
 
 2. Install dependencies:
@@ -29,7 +29,7 @@ A directory app in React is a type of application that allows users to browse, s
 
 3. Start the development server:
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Usage
