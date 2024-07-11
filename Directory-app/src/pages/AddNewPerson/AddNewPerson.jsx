@@ -4,20 +4,29 @@ import PropTypes from "prop-types";
 
 const AddNewPerson = ({ users, setUsers }) => {
   const [name, setName] = useState("");
-  const [dob, setDob] = useState(null);
+  const [dob, setDob] = useState("");
   const [aadhar, setAadhar] = useState("");
   const [mobile, setMobile] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState(null);
 
   const [showForm, setShowForm] = useState(false);
 
   const handleSaveUser = (e) => {
-    if (!name || !dob || !aadhar || !mobile) {
+    if (
+      name.trim() === "" ||
+      dob.trim() === "" ||
+      aadhar.trim() === "" ||
+      mobile.trim() === ""
+    ) {
       alert("Please fill all the fields");
-    } else if (aadhar.length !== 12) {
-      alert("Please enter a valid Aadhar number");
-    } else if (mobile.length !== 10) {
-      alert("Please enter a valid Mobile number");
+      return;
+    }
+    if (aadhar.length !== 12) {
+      alert("Please enter 12 digit aadhar number");
+      return;
+    }
+    if (mobile.length !== 10) {
+      alert("Please enter 10 digit mobile number");
     } else {
       e.preventDefault();
       localStorage.setItem(
@@ -35,7 +44,7 @@ const AddNewPerson = ({ users, setUsers }) => {
       setDob("");
       setAadhar("");
       setMobile("");
-      setAge("");
+      setAge(null);
       setShowForm(false);
     }
   };
@@ -73,7 +82,7 @@ const AddNewPerson = ({ users, setUsers }) => {
     setDob("");
     setAadhar("");
     setMobile("");
-    setAge("");
+    setAge(null);
   };
 
   return (
