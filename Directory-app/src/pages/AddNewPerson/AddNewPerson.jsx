@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { v4 as generateId } from "uuid";
+import PropTypes from "prop-types";
 
-const AddNewPerson = () => {
+const AddNewPerson = ({ users, setUsers }) => {
   const [name, setName] = useState("");
   const [dob, setDob] = useState(null);
   const [aadhar, setAadhar] = useState("");
@@ -10,9 +11,6 @@ const AddNewPerson = () => {
 
   const [showForm, setShowForm] = useState(false);
 
-  const dataFromLocalStorage = JSON.parse(localStorage.getItem("users"));
-  console.log(dataFromLocalStorage);
-  const [users, setUsers] = useState(dataFromLocalStorage || []);
   const handleSaveUser = (e) => {
     if (!name || !dob || !aadhar || !mobile) {
       alert("Please fill all the fields");
@@ -41,8 +39,6 @@ const AddNewPerson = () => {
       setShowForm(false);
     }
   };
-
-  console.log(users);
 
   useEffect(() => {
     const calculateAge = () => {
@@ -200,6 +196,11 @@ const AddNewPerson = () => {
       </div>
     </div>
   );
+};
+
+AddNewPerson.propTypes = {
+  users: PropTypes.array,
+  setUsers: PropTypes.func,
 };
 
 export default AddNewPerson;
